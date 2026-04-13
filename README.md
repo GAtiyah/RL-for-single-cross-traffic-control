@@ -31,7 +31,7 @@ Can an RL policy learn a better long-horizon controller than fixed-cycle and que
 ## Repository Layout
 
 ```text
-RL_traffic_Alex/
+RL_traffic_control/
 ├── configs/
 │   └── default.yaml
 ├── docs/
