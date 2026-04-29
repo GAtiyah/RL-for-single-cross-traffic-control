@@ -1,0 +1,30 @@
+base_config: configs/default.yaml
+
+global_defaults:
+  output_root: results/final_clean/ablations
+  seeds: [7, 17, 27]
+
+studies:
+  algorithm_update:
+    description: Compare vanilla DQN target updates against Double DQN target updates.
+    variants:
+      vanilla_dqn:
+        overrides:
+          training:
+            double_dqn: false
+      double_dqn:
+        overrides:
+          training:
+            double_dqn: true
+
+  action_masking:
+    description: Measure the contribution of environment-aware legal-action masking.
+    variants:
+      mask_off:
+        overrides:
+          training:
+            use_action_mask: false
+      mask_on:
+        overrides:
+          training:
+            use_action_mask: true
